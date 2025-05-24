@@ -330,17 +330,33 @@ function App() {
               </h3>
               <p className="text-blue-300">@Telnet</p>
               <p className="text-gray-400 text-sm">September 2023 - Present</p>
-              <p className="text-gray-300 mt-4">
-                At Telnet, I drive DevOps and automation initiatives for critical Electronic Payment Terminal (TPE) software development and testing, supporting Worldline, a global leader in online payment solutions. My work focuses on building resilient infrastructure, optimizing software delivery pipelines, and enhancing product quality through automation.
-              </p>
-              <ul className="mt-4 space-y-2">
-                <li>• Engineered a Docker-based simulation environment for core payment servers, ensuring <strong>uninterrupted development and testing</strong> during a major infrastructure migration.</li>
-                <li>• <strong>Spearheaded the development of the Terminal Packager tool</strong>, automating complex TPE software bundling and <strong>reducing package creation time from hours to under one minute</strong>.</li>
-                <li>• Designed and implemented advanced <strong>GitLab CI/CD pipelines</strong> for the Terminal Packager, featuring minimalist Docker images, automated merge request difference reporting, and release automation.</li>
-                <li>• <strong>Architected and implemented a robust automated TPE testing infrastructure</strong>, significantly improving test coverage and accelerating QA cycles.</li>
-                <li>• Integrated nightly parallel TPE test executions via <strong>GitLab CI/CD</strong> with automated results reporting to X-Ray (Jira) for <strong>centralized quality insights and traceability</strong>.</li>
-                <li>• Managed GitLab Runners and optimized server configurations to support scalable CI/CD operations.</li>
-              </ul>
+
+              {/* Infrastructure & Automation */}
+              <div className="mt-6">
+                <h4 className="text-xl font-semibold text-blue-400 mb-2">Infrastructure & Automation</h4>
+                <ul className="space-y-2 text-gray-300">
+                  <li>• Engineered a Docker-based simulation environment for core payment servers, ensuring <strong>uninterrupted development and testing</strong> during a major infrastructure migration.</li>
+                  <li>• Managed GitLab Runners and optimized server configurations to support scalable CI/CD operations.</li>
+                </ul>
+              </div>
+
+              {/* CI/CD Pipelines */}
+              <div className="mt-6">
+                <h4 className="text-xl font-semibold text-blue-400 mb-2">CI/CD Pipelines</h4>
+                <ul className="space-y-2 text-gray-300">
+                  <li>• <strong>Spearheaded the development of the Terminal Packager tool</strong>, automating complex TPE software bundling and <strong>reducing package creation time from hours to under one minute</strong>.</li>
+                  <li>• Designed and implemented advanced <strong>GitLab CI/CD pipelines</strong> for the Terminal Packager, featuring minimalist Docker images, automated merge request difference reporting, and release automation.</li>
+                </ul>
+              </div>
+
+              {/* Testing & Quality */}
+              <div className="mt-6">
+                <h4 className="text-xl font-semibold text-blue-400 mb-2">Testing & Quality</h4>
+                <ul className="space-y-2 text-gray-300">
+                  <li>• <strong>Architected and implemented a robust automated TPE testing infrastructure</strong>, significantly improving test coverage and accelerating QA cycles.</li>
+                  <li>• Integrated nightly parallel TPE test executions via <strong>GitLab CI/CD</strong> with automated results reporting to X-Ray (Jira) for <strong>centralized quality insights and traceability</strong>.</li>
+                </ul>
+              </div>
             </div>
             {/* Spark-it Experience */}
             <div className="glass-effect p-8 rounded-xl">
