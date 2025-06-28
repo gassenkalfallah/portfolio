@@ -330,33 +330,37 @@ function App() {
               </h3>
               <p className="text-blue-300">@Telnet</p>
               <p className="text-gray-400 text-sm">September 2023 - Present</p>
+              <p className="text-gray-300 mt-4">
+                Software Engineer at Telnet, contributing to critical projects for Worldline, a global leader in online payment solutions. My role focuses on enabling, optimizing, and automating the development and testing infrastructure for Electronic Payment Terminal (TPE) software, ensuring efficiency, resilience, and quality.
+              </p>
 
-              {/* Infrastructure & Automation */}
-              <div className="mt-6">
-                <h4 className="text-xl font-semibold text-blue-400 mb-2">Infrastructure & Automation</h4>
-                <ul className="space-y-2 text-gray-300">
-                  <li>• Engineered a Docker-based simulation environment for core payment servers, ensuring <strong>uninterrupted development and testing</strong> during a major infrastructure migration.</li>
-                  <li>• Managed GitLab Runners and optimized server configurations to support scalable CI/CD operations.</li>
-                </ul>
-              </div>
+              <h4 className="text-xl font-semibold text-blue-400 mt-6 mb-2">Key Projects & Achievements</h4>
+              <ul className="space-y-4 text-gray-300">
+                <li>
+                  <strong>Infrastructure Resilience & Business Continuity:</strong> Developed and deployed a local Docker-based solution to simulate core payment servers (acquirer, treatment). This ensured uninterrupted development and testing for developers and testers during a major infrastructure migration, acting as a crucial backup solution. Actively participated in the successful migration to the new infrastructure.
+                </li>
+                <li>
+                  <strong>Terminal Packager Development & Automation:</strong> Led the development of the "Terminal Packager" tool, automating the highly complex process of consolidating and packaging TPE software components. This innovative solution generates optimized, 'all-in-one' TPE packages in under one minute, significantly reducing prior manual effort and errors.
+                  <ul className="list-disc ml-6 mt-2">
+                    <li>Designed and implemented highly optimized, minimalist Docker images for the tool.</li>
+                    <li>Developed comprehensive GitLab CI/CD pipelines for automated package delivery, including syntax validation, merge request difference reporting (with structured comments for reviewers), and automated release builds (Docker image creation and push to Artifactory).</li>
+                    <li>Successfully deployed the Terminal Packager to production servers.</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Automated TPE Software Testing & CI:</strong> Architected and implemented an automated TPE software testing infrastructure.
+                  <ul className="list-disc ml-6 mt-2">
+                    <li>Configured dedicated test servers, tools, and drivers, ensuring seamless communication with TPE devices.</li>
+                    <li>Integrated nightly automated test runs into existing CI/CD pipelines: generating packages via Terminal Packager, orchestrating parallel installation and test suite execution across multiple TPEs, and integrating results/logs with X-Ray for centralized reporting.</li>
+                    <li>Managed GitLab Runners to support all CI/CD operations.</li>
+                  </ul>
+                </li>
+              </ul>
 
-              {/* CI/CD Pipelines */}
-              <div className="mt-6">
-                <h4 className="text-xl font-semibold text-blue-400 mb-2">CI/CD Pipelines</h4>
-                <ul className="space-y-2 text-gray-300">
-                  <li>• <strong>Spearheaded the development of the Terminal Packager tool</strong>, automating complex TPE software bundling and <strong>reducing package creation time from hours to under one minute</strong>.</li>
-                  <li>• Designed and implemented advanced <strong>GitLab CI/CD pipelines</strong> for the Terminal Packager, featuring minimalist Docker images, automated merge request difference reporting, and release automation.</li>
-                </ul>
-              </div>
-
-              {/* Testing & Quality */}
-              <div className="mt-6">
-                <h4 className="text-xl font-semibold text-blue-400 mb-2">Testing & Quality</h4>
-                <ul className="space-y-2 text-gray-300">
-                  <li>• <strong>Architected and implemented a robust automated TPE testing infrastructure</strong>, significantly improving test coverage and accelerating QA cycles.</li>
-                  <li>• Integrated nightly parallel TPE test executions via <strong>GitLab CI/CD</strong> with automated results reporting to X-Ray (Jira) for <strong>centralized quality insights and traceability</strong>.</li>
-                </ul>
-              </div>
+              <h4 className="text-xl font-semibold text-blue-400 mt-6 mb-2">Technical Stack</h4>
+              <p className="text-gray-300">
+                Docker, GitLab CI/CD, Nexus, Artifactory, X-Ray, Shell Scripting, Linux, DevOps Practices, CI/CD Runners.
+              </p>
             </div>
             {/* Spark-it Experience */}
             <div className="glass-effect p-8 rounded-xl">
