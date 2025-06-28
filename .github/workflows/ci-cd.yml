@@ -17,19 +17,14 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '20'
-      - name: Show working directory
-        run: cd project && pwd
+      
       - name: Install dependencies
         run: npm install
 
       - name: Build the application
-        run: npm run build
+        run: npm run build && ls -la
         
-      - name: Upload production-ready build files
-        uses: actions/upload-artifact@v4
-        with:
-          name: dist
-          path: project/dist
+    
 
   deploy:
     runs-on: ubuntu-latest
@@ -39,14 +34,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: dist
-          path: project/dist
+     
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./project/dist
+          publish_dir: ./dist
