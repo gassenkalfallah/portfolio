@@ -375,12 +375,13 @@ function App() {
                 role: 'DevOps & Cloud Engineer Intern',
                 company: 'Spark-it',
                 period: 'February 2023 - June 2023',
-                description: 'Led the migration of a DevSecOps solution to AWS Cloud, focusing on infrastructure automation and container orchestration.',
+                description: 'Led the migration of a DevOps solution to AWS Cloud, focusing on infrastructure automation and container orchestration.',
                 achievements: [
-                  'Automated AWS infrastructure provisioning using Terraform',
-                  'Containerized applications and developed Kubernetes deployment manifests',
-                  'Implemented GitLab-CI pipeline for automated deployments',
-                  'Set up cloud-native backup solution using Velero'
+                  'Provisioned and managed AWS infrastructure using Terraform, reducing setup time by 50%.',
+                  'Created secure, modular GitLab CI/CD pipelines for infrastructure and application deployment.',
+                  'Dockerized application services to improve scalability and enable rapid environment replication.',
+                  'Wrote Kubernetes manifests for EKS, ensuring fault-tolerant, self-healing deployments.',
+                  'Enabled disaster recovery via Velero, ensuring full cluster backup and restore capabilities.'
                 ],
                 technicalStack: [
                   'AWS', 'Terraform', 'Kubernetes', 'Docker', 'Velero', 'GitLab CI', 'Azure'
