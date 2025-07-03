@@ -381,6 +381,9 @@ function App() {
                   'Containerized applications and developed Kubernetes deployment manifests',
                   'Implemented GitLab-CI pipeline for automated deployments',
                   'Set up cloud-native backup solution using Velero'
+                ],
+                technicalStack: [
+                  'AWS', 'Terraform', 'Kubernetes', 'Docker', 'Velero', 'GitLab CI', 'Azure'
                 ]
               },
               {
@@ -423,6 +426,13 @@ function App() {
                     </li>
                   ))}
                 </ul>
+                {exp.technicalStack && (
+                  <div className="mt-4 flex flex-wrap gap-3 text-blue-300 text-sm">
+                    {exp.technicalStack.map((tech, i) => (
+                      <span key={i} className="px-3 py-1 bg-blue-500/20 rounded-full">{tech}</span>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
