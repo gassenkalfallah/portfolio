@@ -1,6 +1,7 @@
 import React, { useEffect, useState, FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
 import profileImage from './profile.jpeg';
+
 import { Toaster, toast } from 'react-hot-toast';
 import { 
   Github, 
@@ -30,7 +31,7 @@ import {
 } from 'lucide-react';
 
 // Initialize EmailJS
-emailjs.init("YOUR_PUBLIC_KEY");
+emailjs.init("cA1VSomT1TRDBhsq9");
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -65,7 +66,7 @@ function App() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.email || !formData.message) {
       toast.error('Please fill in all fields');
       return;
@@ -75,8 +76,8 @@ function App() {
 
     try {
       await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        'service_innfiqk',
+        'template_lvdew67',
         {
           to_email: 'gassen.kalfallah@enis.tn',
           from_email: formData.email,
@@ -160,7 +161,7 @@ function App() {
               <div className="relative inline-block">
                 <div className="absolute inset-0 bg-blue-500 rounded-full blur-xl opacity-20 animate-pulse"></div>
                 <img 
-                  src={profileImage} 
+                  src={profileImage}
                   alt="Profile" 
                   className="w-40 h-40 rounded-full border-4 border-blue-400/30 object-cover relative z-10"
                 />
@@ -323,62 +324,107 @@ function App() {
             Professional Journey
           </h2>
           <div className="max-w-4xl mx-auto space-y-12">
-            {/* Telnet Experience */}
-            <div className="glass-effect p-8 rounded-xl">
-              <h3 className="text-2xl font-semibold gradient-text">
-                Software Engineer | DevOps & Automation Specialist
-              </h3>
-              <p className="text-blue-300">@Telnet</p>
-              <p className="text-gray-400 text-sm">September 2023 - Present</p>
-              <p className="text-gray-300 mt-4">
-                Software Engineer at Telnet, contributing to critical projects for Worldline, a global leader in online payment solutions. My role focuses on enabling, optimizing, and automating the development and testing infrastructure for Electronic Payment Terminal (TPE) software, ensuring efficiency, resilience, and quality.
-              </p>
-
-              <h4 className="text-xl font-semibold text-blue-400 mt-6 mb-2">Key Projects & Achievements</h4>
-              <ul className="space-y-4 text-gray-300">
-                <li>
-                  <strong>Infrastructure Resilience & Business Continuity:</strong> Developed and deployed a local Docker-based solution to simulate core payment servers (acquirer, treatment). This ensured uninterrupted development and testing for developers and testers during a major infrastructure migration, acting as a crucial backup solution. Actively participated in the successful migration to the new infrastructure.
-                </li>
-                <li>
-                  <strong>Terminal Packager Development & Automation:</strong> Led the development of the "Terminal Packager" tool, automating the highly complex process of consolidating and packaging TPE software components. This innovative solution generates optimized, 'all-in-one' TPE packages in under one minute, significantly reducing prior manual effort and errors.
-                  <ul className="list-disc ml-6 mt-2">
-                    <li>Designed and implemented highly optimized, minimalist Docker images for the tool.</li>
-                    <li>Developed comprehensive GitLab CI/CD pipelines for automated package delivery, including syntax validation, merge request difference reporting (with structured comments for reviewers), and automated release builds (Docker image creation and push to Artifactory).</li>
-                    <li>Successfully deployed the Terminal Packager to production servers.</li>
-                  </ul>
-                </li>
-                <li>
-                  <strong>Automated TPE Software Testing & CI:</strong> Architected and implemented an automated TPE software testing infrastructure.
-                  <ul className="list-disc ml-6 mt-2">
-                    <li>Configured dedicated test servers, tools, and drivers, ensuring seamless communication with TPE devices.</li>
-                    <li>Integrated nightly automated test runs into existing CI/CD pipelines: generating packages via Terminal Packager, orchestrating parallel installation and test suite execution across multiple TPEs, and integrating results/logs with X-Ray for centralized reporting.</li>
-                    <li>Managed GitLab Runners to support all CI/CD operations.</li>
-                  </ul>
-                </li>
-              </ul>
-
-              <h4 className="text-xl font-semibold text-blue-400 mt-6 mb-2">Technical Stack</h4>
-              <p className="text-gray-300">
-                Docker, GitLab CI/CD, Nexus, Artifactory, X-Ray, Shell Scripting, Linux, DevOps Practices, CI/CD Runners.
-              </p>
-            </div>
-            {/* Spark-it Experience */}
-            <div className="glass-effect p-8 rounded-xl">
-              <h3 className="text-2xl font-semibold gradient-text">
-                DevOps & Cloud Engineer Intern
-              </h3>
-              <p className="text-blue-300">@Spark-it</p>
-              <p className="text-gray-400 text-sm">February 2023 - June 2023</p>
-              <p className="text-gray-300 mt-4">
-                Led the migration of a DevSecOps solution to AWS Cloud, focusing on infrastructure automation and container orchestration.
-              </p>
-              <ul className="mt-4 space-y-2">
-                <li>• Automated AWS infrastructure provisioning using Terraform</li>
-                <li>• Containerized applications and developed Kubernetes deployment manifests</li>
-                <li>• Implemented GitLab-CI pipeline for automated deployments</li>
-                <li>• Set up cloud-native backup solution using Velero</li>
-              </ul>
-            </div>
+            {[
+              {
+                role: 'Software Engineer | DevOps & Automation Specialist',
+                company: 'Telnet',
+                period: 'September 2023 - Present',
+                description: (
+                  <>
+                    <span>
+                      Software Engineer at Telnet, contributing to critical projects for Worldline, a global leader in online payment solutions. My role focuses on enabling, optimizing, and automating the development and testing infrastructure for Electronic Payment Terminal (TPE) software, ensuring efficiency, resilience, and quality.
+                    </span>
+                    <div className="mt-6">
+                      <h4 className="text-xl font-semibold text-blue-400 mb-2">Key Projects & Achievements</h4>
+                      <ul className="list-disc list-inside space-y-2 text-gray-300">
+                        <li>
+                          <b>Infrastructure Resilience & Business Continuity:</b> Developed and deployed a local Docker-based solution to simulate core payment servers (acquirer, treatment), ensuring uninterrupted development and testing during a major infrastructure migration. Actively participated in the successful migration to the new infrastructure.
+                        </li>
+                        <li>
+                          <b>Terminal Packager Development & Automation:</b> Led the development of the "Terminal Packager" tool, automating the complex process of consolidating and packaging TPE software components. This solution generates optimized, all-in-one TPE packages in under one minute, reducing manual effort and errors.
+                          <ul className="list-disc ml-6 space-y-1">
+                            <li>Designed and implemented highly optimized, minimalist Docker images for the tool.</li>
+                            <li>Developed comprehensive GitLab CI/CD pipelines for automated package delivery, including syntax validation, merge request difference reporting, and automated release builds.</li>
+                            <li>Successfully deployed the Terminal Packager to production servers.</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <b>Automated TPE Software Testing & CI:</b> Architected and implemented an automated TPE software testing infrastructure, integrating nightly automated test runs into CI/CD pipelines, orchestrating parallel test execution across multiple TPEs, and integrating results with X-Ray for centralized reporting.
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="mt-6">
+                      <h4 className="text-xl font-semibold text-blue-400 mb-2">Technical Stack</h4>
+                      <div className="flex flex-wrap gap-3 text-blue-300 text-sm">
+                        <span className="px-3 py-1 bg-blue-500/20 rounded-full">Docker</span>
+                        <span className="px-3 py-1 bg-blue-500/20 rounded-full">GitLab CI/CD</span>
+                        <span className="px-3 py-1 bg-blue-500/20 rounded-full">Nexus</span>
+                        <span className="px-3 py-1 bg-blue-500/20 rounded-full">Artifactory</span>
+                        <span className="px-3 py-1 bg-blue-500/20 rounded-full">X-Ray</span>
+                        <span className="px-3 py-1 bg-blue-500/20 rounded-full">Shell Scripting</span>
+                        <span className="px-3 py-1 bg-blue-500/20 rounded-full">Linux</span>
+                        <span className="px-3 py-1 bg-blue-500/20 rounded-full">DevOps Practices</span>
+                        <span className="px-3 py-1 bg-blue-500/20 rounded-full">CI/CD Runners</span>
+                      </div>
+                    </div>
+                  </>
+                ),
+                achievements: []
+              },
+              {
+                role: 'DevOps & Cloud Engineer Intern',
+                company: 'Spark-it',
+                period: 'February 2023 - June 2023',
+                description: 'Led the migration of a DevSecOps solution to AWS Cloud, focusing on infrastructure automation and container orchestration.',
+                achievements: [
+                  'Automated AWS infrastructure provisioning using Terraform',
+                  'Containerized applications and developed Kubernetes deployment manifests',
+                  'Implemented GitLab-CI pipeline for automated deployments',
+                  'Set up cloud-native backup solution using Velero'
+                ]
+              },
+              {
+                role: 'Software Development Intern',
+                company: 'LUNAR-TC',
+                period: 'July 2022 - August 2022',
+                description: 'Developed a Product Management Microservice, gaining hands-on experience with modern development practices.',
+                achievements: [
+                  'Designed and developed microservice for product management using Spring Boot',
+                  'Implemented containerization using Docker for consistent deployment',
+                  'Utilized Git for version control and collaborative development',
+                  'Gained practical experience with microservices architecture'
+                ]
+              },
+              {
+                role: 'Technical Intern',
+                company: 'Tunisie Telecom',
+                period: 'July 2021 - August 2021',
+                description: 'Gained exposure to telecom infrastructure and operations.',
+                achievements: [
+                  'Studied company operations and telecom infrastructure',
+                  'Participated in technical maintenance procedures',
+                  'Observed service delivery processes',
+                  'Learned about telecommunications industry standards'
+                ]
+              }
+            ].map((exp, index) => (
+              <div key={index} className="glass-effect p-8 rounded-xl experience-line">
+                <div className="flex flex-wrap gap-4 items-center mb-4">
+                  <h3 className="text-2xl font-semibold gradient-text">{exp.role}</h3>
+                  <span className="text-blue-300">@{exp.company}</span>
+                  <span className="text-gray-400 text-sm">{exp.period}</span>
+                </div>
+                <p className="text-gray-300 mb-4">{exp.description}</p>
+                <ul className="space-y-2">
+                  {exp.achievements.map((achievement, i) => (
+                    <li key={i} className="text-gray-300 flex items-start gap-2">
+                      <span className="text-blue-400">•</span>
+                      {achievement}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -444,17 +490,17 @@ function App() {
             {[
               {
                 degree: 'Engineering Cycle in Computer Engineering',
-                institution: "ENIS - École Nationale d'Ingénieurs de Sfax",
+                institution: "National Engineering School of Sfax (ENIS)",
                 icon: <BookOpen className="w-8 h-8" />
               },
               {
-                degree: 'Preparatory Cycle (PT - Physique / Technique)',
-                institution: "IPEIM - Institut Préparatoire aux Études d'Ingénieurs de Monastir",
+                degree: 'Preparatory Cycle (Physics / Technology)',
+                institution: "Preparatory Institute for Engineering Studies of Monastir (IPEIM)",
                 icon: <Award className="w-8 h-8" />
               },
               {
-                degree: 'Baccalauréat Technique',
-                institution: "Lycée d'Eljem",
+                degree: 'Technical Baccalaureate',
+                institution: "Eljem High School",
                 icon: <BookOpen className="w-8 h-8" />
               }
             ].map((edu, index) => (
@@ -482,7 +528,7 @@ function App() {
           <div className="max-w-xl mx-auto">
             <div className="flex justify-center space-x-8 mb-12">
               <a 
-                href="https://github.com" 
+                href="https://github.com/gassenkalfallah" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-gray-400 hover:text-blue-400 transition-all transform hover:scale-110"
@@ -490,7 +536,7 @@ function App() {
                 <Github className="w-10 h-10" />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/ghassenkhalfallah/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-gray-400 hover:text-blue-400 transition-all transform hover:scale-110"
@@ -537,7 +583,7 @@ function App() {
 
       <footer className="py-8 border-t border-gray-800/50">
         <div className="container mx-auto px-4 text-center text-gray-400">
-          <p className="text-sm">© 2024 Ghassen Khalfallah • Software Engineer & DevOps Specialist • Building the Future of Cloud Infrastructure</p>
+          <p className="text-sm">© 2025 Ghassen Khalfallah • Software Engineer & DevOps Specialist • Building the Future of Cloud Infrastructure</p>
         </div>
       </footer>
     </div>
